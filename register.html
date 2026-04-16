@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card reg-card">
+        <h2>Registration Form</h2>
+        <form id="rForm" action="process.php" method="POST">
+            <input type="hidden" name="action" value="register">
+
+            <!-- Security Section -->
+            <div class="grid-row">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <!-- Added ID and placeholder to help the user -->
+                    <input type="password" name="password" id="regPassword" required placeholder="Min 8 chars, A, a, 1, @">
+                    <!-- This area will show the password strength error -->
+                    <small id="passError" style="color: #dc3545; display: block; margin-top: 5px; font-size: 11px; font-weight: normal;"></small>
+                </div>
+            </div>
+            
+            <hr style="border: 0.5px solid #eee; margin-bottom: 20px;">
+
+            <!-- Row 1: Names and Department -->
+            <div class="grid-row">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="first_name">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="last_name">
+                </div>
+                <div class="form-group">
+                    <label>Department</label>
+                    <select name="department">
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 2: Gender, Hobbies, Others -->
+            <div class="grid-row">
+                <div class="form-group">
+                    <label>Gender</label>
+                    <input type="radio" name="gender" value="Male"> Male<br>
+                    <input type="radio" name="gender" value="Female"> Female<br>
+                    <input type="radio" name="gender" value="Other"> Other
+                </div>
+                <div class="form-group">
+                    <label>Hobbies</label>
+                    <input type="checkbox" name="hobbies[]" value="Reading"> Reading<br>
+                    <input type="checkbox" name="hobbies[]" value="Sports"> Sports<br>
+                    <input type="checkbox" name="hobbies[]" value="Music"> Music<br>
+                    <input type="checkbox" name="hobbies[]" value="Travel"> Travel
+                </div>
+                <div class="form-group">
+                    <label>Others</label>
+                    <textarea name="others" style="height: 100px;"></textarea>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn-primary">Register</button>
+                <button type="button" class="btn-danger" onclick="clearForm('rForm')">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Make sure script.js is linked -->
+    <script src="script.js"></script>
+</body>
+</html>

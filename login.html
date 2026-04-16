@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="card login-card">
+        <h2>Login Form</h2>
+        <form id="lForm" action="process.php" method="POST">
+            <input type="hidden" name="action" value="login">
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn-primary">Login</button>
+                <button type="button" class="btn-danger" onclick="clearForm('lForm')">Clear</button>
+            </div>
+            <a href="register.html" class="footer-link">Create New Account</a>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
